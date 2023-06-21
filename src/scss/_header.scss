@@ -1,0 +1,124 @@
+@use "./variables" as *;
+
+// Hamburger icon transition modified from
+// https://codepen.io/RRoberts/pen/ZBYaJr
+
+
+header {
+    h1 {
+        max-width: 100px;
+        margin: 0;
+        scale: 0.7;
+    }
+
+    .socials {
+        a {
+            fill: $light;
+            margin: 0 2rem;
+        }
+        svg {
+            scale: 2
+        }
+    }
+}
+
+//Hamburger button to X shape
+.nav-button {
+    margin: 0;
+    padding: 0;
+    border: none;
+    background: none;
+    position: absolute;
+    right: 15px;
+    top: 2px;
+
+    .line {
+        width: 50px;
+        height: 5px;
+        background-color: $primary;
+        display: block;
+        margin: 10px auto;
+        transition: all 0.4s ease-in-out;
+
+        .show &:nth-child(2){
+            width: 0;
+        }
+
+        .show &:nth-child(1){
+            transform: translateY(15px);
+        }
+
+        .show &:nth-child(3){
+            transform: translateY(-15px) rotate(90deg);
+        }
+
+        //changes hamburg color to white
+        //get rid of transition, too much?
+        .show &{
+            background-color: $light;
+        }
+    }
+
+    .show & {
+        transition: all 0.4s ease-in-out;
+        transform: rotate(45deg);
+        z-index: 800;
+    }
+}
+
+//Slideout menu transition and styling
+.site-nav {
+    background-color: $primary;
+    position: fixed;
+    right: -100%;
+    top: 0;
+    transition: right .4s ease;
+    z-index: 100;
+    margin: 0 auto;
+    display: grid;
+    justify-items: center;
+    height: 100vh;
+
+    .show & {
+        right: 0;
+        width: 100vw;
+    }
+    
+    ul {
+        padding: 1rem;
+
+        li {
+            list-style: none;
+            padding: 1.5rem 0;
+            text-align: center;
+    
+            a {
+                text-decoration: none;
+                text-transform: uppercase;
+                color: $light;
+                font-family: $font-primary;
+                font-size: 2.5rem;
+            }
+
+            :hover,
+            a:focus,
+            a:active {
+                color: $primary;
+                background-color: $light;
+            }
+        }
+
+        li:not(:last-child){
+            border-bottom: 1px solid $light;  
+         }
+    }
+
+    @media(min-width: 31em) {
+        .show & {
+            width: auto;
+        }
+        ul {
+            padding: 4rem 5rem;
+        }
+    }
+}
