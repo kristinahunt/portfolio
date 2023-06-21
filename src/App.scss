@@ -1,0 +1,8 @@
+@use './scss/variables' as *;
+@use './scss/mixins' as *;
+@use './scss/header';
+@use './scss/footer';
+
+body {
+    background-color: $light;
+}
