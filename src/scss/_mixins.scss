@@ -1,0 +1,22 @@
+@use "./variables" as *;
+
+//Button style
+@mixin button-arrow {
+    padding: 0.75rem;
+    width: 15.75rem;
+    background-color: $primary;
+    
+    a {
+        color: $light;
+        font-family: $font-primary;
+        font-weight: $bold;
+        font-size: 2rem;
+        text-decoration: none;
+    }
+
+    svg {
+        fill: $light;
+        scale: 1.5;
+        padding-left: 1rem;
+    }
+}
