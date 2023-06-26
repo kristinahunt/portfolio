@@ -76,7 +76,7 @@ header {
     z-index: 100;
     margin: 0 auto;
     display: grid;
-    justify-items: center;
+    place-items: center;
     height: 100vh;
 
     .show & {
@@ -114,6 +114,7 @@ header {
     }
 
     @media(min-width: 31em) {
+
         .show & {
             width: auto;
         }
