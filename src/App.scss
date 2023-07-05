@@ -1,7 +1,9 @@
 @use './scss/variables' as *;
 @use './scss/mixins' as *;
+@use './scss/buttons';
 @use './scss/header';
 @use './scss/landing';
+@use './scss/featured';
 @use './scss/footer';
 
 body {
