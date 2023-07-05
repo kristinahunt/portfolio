@@ -5,9 +5,9 @@
     height: 90vh;
     display: grid;
     grid-template-rows: 250px 150px 200px;
-    place-content: center;
+    justify-content: center;
+    align-content: center;
     align-items: center;
-    margin: 0 auto;
     padding: 0 2rem;
 
     h1 {
@@ -25,5 +25,15 @@
        h1{
         font-size: 5rem;
        }
+    }
+
+    @media(min-width: 65em) {
+        max-width: 60em;
+        margin: 0 auto;
+        justify-content: start;
+
+        .content {
+            max-width: 40em;
+        }
     }
 }

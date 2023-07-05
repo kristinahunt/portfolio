@@ -2,53 +2,56 @@
 @use "./mixins" as *;
 
 #featured {
-    display: grid;
-    grid-template-columns: 300px;
     margin: 0 1rem;
 
-    .featured-project {
-        display: flex;
-        flex-direction: column;
-        margin: 0.5rem 0;
-
-        h3 {
-            margin-top: 0;
-        }
-
-        a {
-            color: $dark;
-         }
+    h2 {
+        color: $primary;
+        font-family: $font-primary;
+        font-weight: $bold;
+        font-size: 2.5rem;
     }
 
-    .featured-image {
-        margin: 0;
-        
-        img {
-            width: 350px;
-            object-fit: cover;
-        }
-    }
+    .featured-projects-container {
+        display: grid;
+        grid-template-columns: 1fr;
 
-    @media (min-width: 28em){
+        .featured-project {
+            display: flex;
+            flex-direction: column;
+            margin: 0.5rem 0;
+    
+            h3 {
+                margin-top: 0;
+            }
+    
+            a {
+                color: $dark;
+             }
+        }
+    
         .featured-image {
-            // img {
-            //     width: 4px;
-            // }
-        }
-    }
-
-    @media(min-width: 35em){
-
-        grid-template-columns: repeat(2(800px));
-
-        .featured-image{
-
+            margin: 0;
+            
             img {
-                width: 800px;
+                width: 100%;
                 height: auto;
+                object-fit: cover;
             }
         }
-    }
- 
+}
 
+    @media (min-width: 33.75em){
+        max-width: 80em;
+
+        .featured-projects-container{
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;  
+        }
+    }
+
+    @media(min-width: 65em) {
+        max-width: 60em;
+        margin: 0 auto;
+        padding: 0 1rem;
+    }
 }
