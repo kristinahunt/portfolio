@@ -3,10 +3,13 @@
 @use './scss/buttons';
 @use './scss/header';
 @use './scss/landing';
+@use './scss/featured';
+@use './scss/projects';
 @use './scss/projects-grid';
 @use './scss/footer';
 
 body {
     background-color: $light;
     font-size: 1.2rem;
+    line-height: 1.5;
 }

@@ -1,44 +1,34 @@
 import { useState} from "react";
 import { Link } from "react-router-dom";
+import featuredImage from "../globals/FeaturedImage";
 
 const Accordion = ({coverImage, featuredMedia, title, slug, summary, designTools, devTools}) => {
     
     const [isActive, setIsActive] = useState(false);
-
-    const featuredImage = ( featuredImageObject ) => {
-        // let imgWidth = featuredImageObject.media_details.sizes.full.width;
-        // let imgHeight = featuredImageObject.media_details.sizes.full.height;
-        
-        let imgHeight = '200px';
-        let imgWidth = 'auto';
-        let imgURL = featuredImageObject.source_url;
-        let img = `<img src="${imgURL}" 
-            width="${imgWidth}"
-            height="${imgHeight}"
-            alt="${featuredImageObject.alt_text}"
-            srcset="${imgURL} ${imgWidth}w,
-            ${featuredImageObject.media_details.sizes.large ? featuredImageObject.media_details.sizes.large.source_url + ' 1024w,' : ''}
-            ${featuredImageObject.media_details.sizes.medium_large ? featuredImageObject.media_details.sizes.medium_large.source_url + ' 768w,' : ''}
-            ${featuredImageObject.media_details.sizes.medium ? featuredImageObject.media_details.sizes.medium.source_url + ' 300w' : ''}"
-            sizes="(max-width: ${imgWidth}) 100vw, ${imgWidth}px">`;
-        return {__html: img}
-      }
 
     return(
         <div className='project' onClick={() => setIsActive(!isActive)}>
 
             {featuredMedia !== 0 && coverImage && <div className="featured-image" dangerouslySetInnerHTML={featuredImage(coverImage)}></div>}
             
-            <Link to={`/projects/${slug}`}><h3>{title}</h3></Link>
+            <div className="title-btn">
+                <h2>{title}</h2>
 
-            <button>
-                {isActive ? '-' : '+'}
-            </button>
+                <button>
+                    {isActive ? '-' : '+'}
+                </button>
+            </div>
 
             {isActive && <div className="accordion-content">
-                           <p>{summary}</p>
+                           <p className='summary'>{summary}</p>
                            <p>Design Toolkit: {designTools}</p>
                            <p>Development Toolkit: {devTools}</p>
+                           <div className="button-arrow">
+                                <Link to={`/projects/${slug}`}>View Project
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M13.025 1l-2.847 2.828 6.176 6.176h-16.354v3.992h16.354l-6.176 6.176 2.847 2.828 10.975-11z"/></svg>
+                                </Link>
+                           </div>
+                           
                          </div>}
         </div>
 
