@@ -1,12 +1,9 @@
 import {useState, useEffect} from 'react';
 import { Link } from 'react-router-dom';
-import arrowRight from '../images/arrow-right.svg';
 
-function Landing({restBase}) {
-    // const restBase = 'https://kristinahunt.ca/portfolio-backend/wp-json/wp/v2/';
-    // const restPath = restBase + '/posts/19'
+function Landing() {
+
     const restPath = 'https://kristinahunt.ca/portfolio-backend/wp-json/wp/v2/posts/19';
-    //console.log(restPath)
 
     const [restData, setData] = useState([])
 

@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import Accordion from '../components/Accordion'
 
 function Projects({featuredImage}) {
 
@@ -18,19 +19,27 @@ function Projects({featuredImage}) {
         fetchData()
     }, [restPath])
 
+    const [accOpen, setAccOpen] = useState(false);
+
+    function toggleAcc () {
+        setAccOpen(!accOpen);
+    }
+
 
     return (
         <section id="projects">
             <h1>Projects</h1>
-            <div className="projects-container">
-                {restData.map(project =>
-                <div key={project.id} className="project">
-                    
-                    {project.featured_media !== 0 && project._embedded['wp:featuredmedia'][0] && 
-                    <div className="featured-image" dangerouslySetInnerHTML={featuredImage(project._embedded['wp:featuredmedia'][0])}></div>}
-
-                    <Link to={`/projects/${project.slug}`}><h3>{project.title.rendered}</h3></Link>
-                </div>
+            <div className="projects-container" >
+                {restData.map(project => {
+                    return <Accordion key={project.id}
+                                      coverImage = {project._embedded['wp:featuredmedia'][0]}
+                                      featuredMedia = {project.featured_media}
+                                      title = {project.title.rendered}
+                                      slug = {project.slug}
+                                      summary = {project.acf.summary}
+                                      designTools = {project.acf.design_tools}
+                                      devTools = {project.acf.development_tools}/>
+                        }
                     )}
             </div>
         </section>

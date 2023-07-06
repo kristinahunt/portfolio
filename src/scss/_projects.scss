@@ -1,0 +1,39 @@
+@use "./variables" as *;
+
+#projects {
+    
+    h1 {
+        color: $primary;
+        font-family: $font-primary;
+        font-weight: $bold;
+        font-size: 2.5rem;
+    }
+
+    .project {
+
+        margin-bottom: 3rem;
+
+        h2 {
+            color: $dark;
+            font-size: 1.5rem;
+            margin: 0;
+        }
+
+        a {
+            color: $light;
+        }
+
+        .title-btn {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            button {
+                all: unset;
+                font-weight: $bold;
+                font-size: 2rem;
+                padding-right: 0.5rem;
+            }
+        }
+    }
+}
