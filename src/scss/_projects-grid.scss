@@ -28,6 +28,14 @@
             a {
                 color: $dark;
              }
+
+             .acc-hidden {
+                display: none;
+             }
+
+             .acc-open {
+                display: block;
+             }
         }
     
         .featured-image {
