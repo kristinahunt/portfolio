@@ -52,8 +52,6 @@ header {
             transform: translateY(-15px) rotate(90deg);
         }
 
-        //changes hamburg color to white
-        //get rid of transition, too much?
         .show &{
             background-color: $light;
         }
