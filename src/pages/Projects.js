@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
 import Accordion from '../components/Accordion'
 
 function Projects({featuredImage}) {
@@ -18,13 +17,6 @@ function Projects({featuredImage}) {
         }
         fetchData()
     }, [restPath])
-
-    const [accOpen, setAccOpen] = useState(false);
-
-    function toggleAcc () {
-        setAccOpen(!accOpen);
-    }
-
 
     return (
         <section id="projects">
