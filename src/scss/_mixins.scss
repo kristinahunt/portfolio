@@ -3,7 +3,7 @@
 //Button style
 @mixin button-arrow {
     padding: 0.75rem;
-    width: 15.75rem;
+    width: max-content;
     background-color: $primary;
     
     a {
@@ -12,11 +12,12 @@
         font-weight: $bold;
         font-size: 2rem;
         text-decoration: none;
+        display: inline-block;
     }
 
     svg {
         fill: $light;
         scale: 1.5;
-        padding-left: 1rem;
+        //padding: 0 0.75rem 0 1.5rem;
     }
 }

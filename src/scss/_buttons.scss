@@ -1,47 +1,36 @@
 @use "./variables" as *;
 @use "./mixins" as *;
 
-@keyframes button-width-off{
-from {width: 18rem;}
-to {width: 15.75rem;}
-}
-
 @keyframes arrow-off {
-from {padding-left: 2.75rem;}
-to {padding-left: 1rem;}
-}
-
-@keyframes button-width {
-from {width: 15.75rem;}
-to {width: 18rem;}
+from {padding-left: 3rem;}
+to {padding-left: 1.5rem;}
 }
 
 @keyframes arrow {
-    from {padding-left: 1rem;}
-    to {padding-left: 2.75rem;}
+    from {padding-left: 1.5rem;}
+    to {padding-left: 3rem;}
 }
 
 .button-arrow {
     @include button-arrow;
-    animation-name: button-width-off;
-    animation-duration: 0.3s;
 
     svg {
         animation-name: arrow-off;
         animation-duration: 0.3s;
+        padding-left: 1.5rem;
+        padding-right: 0.75rem;
     }
 
 }
 
 //add prefers reduced motion mq
 .button-arrow:hover {
-    animation-name: button-width;
-    animation-duration: 0.3s;
-    width: 18rem;
+    @include button-arrow;
 
     svg {
         animation-name: arrow;
         animation-duration: 0.3s;
-        padding-left: 2.75rem;
+        padding-left: 3rem;
+        padding-right: 0.75rem
     }
 }
