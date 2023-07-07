@@ -28,7 +28,7 @@ function Projects({featuredImage}) {
                                       featuredMedia = {project.featured_media}
                                       title = {project.title.rendered}
                                       slug = {project.slug}
-                                      summary = {project.acf.summary}
+                                      summary = {project.acf.intro}
                                       designTools = {project.acf.design_tools}
                                       devTools = {project.acf.development_tools}/>
                         }
