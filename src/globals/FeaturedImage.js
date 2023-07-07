@@ -1,9 +1,6 @@
 const featuredImage = ( featuredImageObject ) => {
-    // let imgWidth = featuredImageObject.media_details.sizes.full.width;
-    // let imgHeight = featuredImageObject.media_details.sizes.full.height;
-    
-    let imgHeight = '200px';
-    let imgWidth = 'auto';
+    let imgWidth = featuredImageObject.media_details.sizes.full.width;
+    let imgHeight = featuredImageObject.media_details.sizes.full.height;
     let imgURL = featuredImageObject.source_url;
     let img = `<img src="${imgURL}" 
         width="${imgWidth}"
