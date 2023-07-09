@@ -1,5 +1,6 @@
 import { useState, useEffect} from "react";
 import { useParams, Link } from "react-router-dom";
+import Carousel from "../components/Carousel";
 
 function SingleProject() {
 
@@ -32,9 +33,12 @@ function SingleProject() {
                 <div key={project.id} className='single-container'>
                     <h1>{project.acf.title}</h1>
 
-                    {project.acf.images.map(image =>
+                    {/* {project.acf.images.map(image =>
                             <img key={image.id} src={image.sizes.medium_large} alt={image.alt} />
-                        )}
+                        )} */}
+                    
+                    {/* {console.log(project.acf.images.length)} */}
+                    <Carousel gallery={project.acf.images.length} />
 
                     <div className="tools-objective">
                         <div className="tools">
