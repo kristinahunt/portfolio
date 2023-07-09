@@ -1,8 +1,9 @@
 @use "./variables" as *;
 
 //Button style
-@mixin button-arrow {
-    padding: 0.75rem;
+@mixin button-arrow($padding, $font-size, $scale) {
+    //padding: 0.75rem;
+    padding: $padding;
     width: max-content;
     background-color: $primary;
     
@@ -10,14 +11,15 @@
         color: $light;
         font-family: $font-primary;
         font-weight: $bold;
-        font-size: 2rem;
+        font-size: $font-size;
         text-decoration: none;
         display: inline-block;
+        display: flex;
+        align-items: center;
     }
 
     svg {
         fill: $light;
-        scale: 1.5;
-        //padding: 0 0.75rem 0 1.5rem;
+        scale: $scale;
     }
 }

@@ -1,7 +1,7 @@
 import { useState, useEffect} from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 
-function Project() {
+function SingleProject() {
 
     const {slug} = useParams();
 
@@ -75,11 +75,18 @@ function Project() {
                         <p className={toggleState === 2 ? "content active-content" : "content"}>
                             {project.acf.development_process}
                         </p>
-                    </div> 
+                    </div>
+
+                    <span className="button-arrow">
+                        <Link to='/projects'>More Projects
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M13.025 1l-2.847 2.828 6.176 6.176h-16.354v3.992h16.354l-6.176 6.176 2.847 2.828 10.975-11z"/></svg>
+                        </Link>
+                    </span>
+      
                 </div>
                     )}
         </section>
     )
 }
 
-export default Project;
+export default SingleProject;
