@@ -1,18 +1,20 @@
 @use "./variables" as *;
 @use "./mixins" as *;
 
+
+//BIG button
 @keyframes arrow-off {
-from {padding-left: 3rem;}
-to {padding-left: 1.5rem;}
+    from {padding-left: 2.75rem;}
+    to {padding-left: 1.5rem;}
 }
 
 @keyframes arrow {
     from {padding-left: 1.5rem;}
-    to {padding-left: 3rem;}
+    to {padding-left: 2.75rem;}
 }
 
 .button-arrow {
-    @include button-arrow;
+    @include button-arrow(0.75rem, 2rem, 1.5);
 
     svg {
         animation-name: arrow-off;
@@ -21,16 +23,42 @@ to {padding-left: 1.5rem;}
         padding-right: 0.75rem;
     }
 
+    &:hover{
+
+        svg {
+            animation-name: arrow;
+            animation-duration: 0.3s;
+            padding-left: 2.75rem;
+        }
+    }
 }
 
-//add prefers reduced motion mq
-.button-arrow:hover {
-    @include button-arrow;
+//SMALL button
+@keyframes arrow-off-small {
+    from {padding-left: 2rem;}
+    to {padding-left: 1rem;}
+}
+
+@keyframes arrow-small {
+    from {padding-left: 1rem;}
+    to {padding-left: 2rem;}
+}
+
+.button-arrow-small {
+    @include button-arrow(0.5rem, 1.5rem, 1.2);
 
     svg {
-        animation-name: arrow;
+        animation-name: arrow-off-small;
         animation-duration: 0.3s;
-        padding-left: 3rem;
-        padding-right: 0.75rem
+        padding-left: 1rem;
+        padding-right: 0.5rem;
+    }
+
+    &:hover {
+        svg {
+            animation-name: arrow-small;
+            animation-duration: 0.3s;
+            padding-left: 2rem;
+        }
     }
 }
