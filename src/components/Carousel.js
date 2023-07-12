@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 
-function Carousel ({gallery}) {
+function Carousel ({gallerySize}) {
 
     //Followed this tutorial: https://www.makeuseof.com/react-js-interactive-carousel-build/
 
@@ -23,7 +23,7 @@ function Carousel ({gallery}) {
     }, [restPath])
 
     const [index, setIndex] = useState(0); 
-    const length = gallery;
+    const length = gallerySize;
   
     const handlePrevious = () => {
       const newIndex = index - 1;
@@ -37,16 +37,15 @@ function Carousel ({gallery}) {
 
     return(
         <div className="image-carousel">
-
-            {restData.map(project =>
-            <div key={project.id} className="buttons">
-                <button onClick={handlePrevious}>Previous</button>
-                <button onClick={handleNext}>Next</button>  
-                <img src={project.acf.images[index].sizes.medium_large} alt="" />
-                {/* {console.log(project.acf.images.length)} */}
-            </div> 
-            )}
-
+                <button className="button-prev" onClick={handlePrevious}>
+                    <svg role="button" aria-label="Previous Image" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M16.67 0l2.83 2.829-9.339 9.175 9.339 9.167-2.83 2.829-12.17-11.996z"/></svg>
+                </button>
+                <button className="button-next" onClick={handleNext}>
+                    <svg role="button"  aria-label="Next Image" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M7.33 24l-2.83-2.829 9.339-9.175-9.339-9.167 2.83-2.829 12.17 11.996z"/></svg>    
+                </button>  
+                {restData.map(project =>
+                <img key={project.id} src={project.acf.images[index].sizes.medium_large} alt="" />
+                )}
         </div>
     );
 }
