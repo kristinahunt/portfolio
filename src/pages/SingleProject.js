@@ -31,16 +31,12 @@ function SingleProject() {
         <section id="single-project">
             {restData.map(project =>
                 <div key={project.id} className='single-container'>
-                    <h1>{project.acf.title}</h1>
+                    <h1>{project.title.rendered}</h1>
 
-                    {/* {project.acf.images.map(image =>
-                            <img key={image.id} src={image.sizes.medium_large} alt={image.alt} />
-                        )} */}
-                    
-                    {/* {console.log(project.acf.images.length)} */}
-                    <Carousel gallery={project.acf.images.length} />
+                    <Carousel gallerySize={project.acf.images.length} />
 
-                    <div className="tools-objective">
+                    <div className="tools-objective"> 
+                    {/* change to tools-links-objective and add conditions for acf links here */}
                         <div className="tools">
                             {project.acf.design_tools !== '' ?
                             <div className="design-tools">
