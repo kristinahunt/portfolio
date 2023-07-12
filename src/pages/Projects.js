@@ -24,7 +24,7 @@ function Projects({featuredImage}) {
             <div className="projects-container" >
                 {restData.map(project => {
                     return <Accordion key={project.id}
-                                    //   coverImage = {project._embedded['wp:featuredmedia'][0]}
+                                      coverImage = {project._embedded['wp:featuredmedia'][0]}
                                       featuredMedia = {project.featured_media}
                                       title = {project.title.rendered}
                                       slug = {project.slug}

@@ -9,7 +9,7 @@ const Accordion = ({coverImage, featuredMedia, title, slug, summary, designTools
     return(
         <div onClick={() => setIsActive(!isActive)} className='project'>
 
-            {/* {featuredMedia !== 0 && coverImage && <div className="featured-image" dangerouslySetInnerHTML={featuredImage(coverImage)}></div>} */}
+            {featuredMedia !== 0 && coverImage && <div className="featured-image" dangerouslySetInnerHTML={featuredImage(coverImage)}></div>}
             
             <div className="title-btn">
                 <h2>{title}</h2>
