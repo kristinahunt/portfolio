@@ -4,7 +4,7 @@ import featuredImage from '../globals/FeaturedImage';
 
 function Featured() {
 
-    const restPath = 'https://kristinahunt.ca/portfolio-backend/wp-json/wp/v2/posts?categories=3&_tags=featured&_embed';
+    const restPath = 'https://kristinahunt.ca/portfolio-backend/wp-json/wp/v2/posts?tags=4&_embed';
 
     const [restData, setData] = useState([])
 

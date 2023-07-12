@@ -4,7 +4,7 @@
 #landing {
     height: 90vh;
     display: grid;
-    grid-template-rows: 250px 150px 200px;
+    grid-template-rows: 250px 250px 200px;
     justify-content: center;
     align-content: center;
     align-items: center;
@@ -19,7 +19,7 @@
     }
 
     @media(min-width: 40em){
-        grid-template-rows: 150px 100px 150px;
+        grid-template-rows: 150px 250px 150px;
         max-width: 46em;
 
        h1{
