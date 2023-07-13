@@ -1,5 +1,5 @@
-@use "./variables" as *;
-@use "./mixins" as *;
+@use "../mixins" as *;
+@use "../variables" as *;
 
 #featured,
 #projects,
@@ -17,18 +17,15 @@
         }
 
         .accordion-content{
-            
             height: 0px;
             overflow: hidden;
-            padding: 0;
-            // transition: height 0.5s ease-in-out;
-
-            transition: all .5s ease;
+            padding: 0rem;
+            transition: height .5s ease;
         }
 
         .open {
-            height: 100%;
-            overflow: auto;
+            height: 100%; //JUMPY FOR SOME REASON
+            overflow: visible;
             overflow-y: hidden;
         }
     
@@ -41,13 +38,19 @@
                 object-fit: cover;
             }
         }
-}
+    }
 
     @media (min-width: 52em){
 
         .projects-container{
             grid-template-columns: repeat(2, 1fr);
             gap: 1.5rem;  
+
+            .featured-image{
+                height: 10em;
+                object-fit: cover;
+                overflow: hidden;
+            }
         }
     }
 
@@ -55,6 +58,22 @@
         max-width: 60em;
         margin: 0 auto;
         padding: 0 1rem;
+
+        .projects-container {
+
+            .featured-image {
+                height: 12em;
+            }
+        }
+    }
+
+    @media(min-width: 70em) {
+        .projects-container {
+
+            .featured-image {
+                height: 14em;
+            }
+        }
     }
 }
 

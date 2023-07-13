@@ -1,0 +1,16 @@
+@use "../mixins" as *;
+@use "../variables" as *;
+
+#about {
+    padding-bottom: 3rem;
+
+    .socials {
+        a {
+            fill: $primary;
+            margin: 0 2rem;
+        }
+        svg {
+            scale: 2;
+        }
+    }
+}
