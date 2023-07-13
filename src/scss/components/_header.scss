@@ -8,6 +8,7 @@
 header {
     position: sticky;
     top: 0;
+    z-index: 700;
     
     h1 {
         max-width: 100px;
@@ -29,6 +30,7 @@ header {
     position: absolute;
     right: 15px;
     top: 2px;
+    z-index: 800;
 
     .line {
         width: 50px;

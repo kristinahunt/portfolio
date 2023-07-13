@@ -1,0 +1,13 @@
+@use "../mixins" as *;
+@use "../variables" as *;
+
+.loading {
+    display: grid;
+    place-content: center;
+    grid-template-columns: 200px;
+    height: 100vh;
+
+    img {
+        padding: 1.5rem;
+    }
+}

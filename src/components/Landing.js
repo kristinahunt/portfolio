@@ -1,10 +1,12 @@
 import {useState, useEffect} from 'react';
 import { Link } from 'react-router-dom';
+import Loading from "../components/Loading"
 
 function Landing() {
 
     const restPath = 'https://kristinahunt.ca/portfolio-backend/wp-json/wp/v2/pages/32'
     const [restData, setData] = useState([])
+    const [isLoaded, setisLoaded] = useState(false)
 
     useEffect(() => {
         const fetchData = async () => {
@@ -12,15 +14,19 @@ function Landing() {
             if ( response.ok ) {
                 const data = await response.json()
                 setData(data)
+                setisLoaded(true)
+            } else {
+                setisLoaded(false)
             }
         }
         fetchData()
     }, [restPath])
 
-    console.log(restPath)
-
 
     return (
+        <>
+        {isLoaded ? 
+            <>
         <section id='landing'>
             <h1>{restData.acf?.name}</h1>
             <p className='content'>{restData.acf?.intro}</p>
@@ -31,6 +37,10 @@ function Landing() {
             </span>
            
         </section>
+        </>
+        : <Loading/>
+        }
+        </>
     );
 }
 

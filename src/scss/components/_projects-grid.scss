@@ -9,12 +9,6 @@
     .projects-container {
         display: grid;
         grid-template-columns: 1fr;
-        
-
-        .project {
-            display: flex;
-            flex-direction: column;
-        }
 
         .accordion-content{
             height: 0px;
@@ -24,7 +18,7 @@
         }
 
         .open {
-            height: 100%; //JUMPY FOR SOME REASON
+            height: 100%;
             overflow: visible;
             overflow-y: hidden;
         }
