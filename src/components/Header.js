@@ -1,7 +1,8 @@
-import { Link, NavLink } from  'react-router-dom';
+import { Link, NavLink, useHistory } from  'react-router-dom';
 import { useState } from 'react';
 import logo from '../images/kh-small.svg';
 import Socials from './Socials';
+import { NavHashLink } from 'react-router-hash-link';
 
 function Header() {
 
@@ -10,6 +11,7 @@ function Header() {
     function toggleNav () {
         setNavOpen(!navOpen);
     }
+
 
     return (
         <header className={navOpen ? 'show' : undefined}>
@@ -27,7 +29,12 @@ function Header() {
                 <ul>
                     <li><NavLink to='/'>Home</NavLink></li>
                     <li><NavLink to='/projects'>Projects</NavLink></li>
-                    <li><NavLink to='#about'>About</NavLink></li>
+                    {/* <li><NavLink to='#about'>About</NavLink></li> */}
+                    {/* <li><NavHashLink smooth to='/#about#top'>About</NavHashLink></li> */}
+                    <li><NavHashLink smooth to='/#about'>About</NavHashLink></li>
+                    {/* <li><NavHashLink to="/#about"
+                                  scroll={(el) => el.scrollIntoView({ behavior: 'smooth', block: 'center', inline:'end' })}>
+                                  About</NavHashLink></li> */}
                 </ul>
                 <Socials />
             </nav>

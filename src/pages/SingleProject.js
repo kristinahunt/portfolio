@@ -2,6 +2,7 @@ import { useState, useEffect} from "react";
 import { useParams, Link } from "react-router-dom";
 import Carousel from "../components/Carousel";
 import Loading from "../components/Loading";
+import { Helmet } from "react-helmet-async";
 
 function SingleProject() {
 
@@ -42,6 +43,13 @@ function SingleProject() {
         <article id="single-project">
             {restData.map(project =>
                 <div key={project.id} className='single-container'>
+
+                    <Helmet>
+                        <title>{project.yoast_head_json.title}</title>
+                        <meta name="description" content={project.yoast_head_json.description}/>
+                        <meta name="keywords" content="Web developer, front-end web developer, web designer, Vancouver web developer, UI/UX designer"/>
+                    </Helmet>
+
                     <h1>{project.title.rendered}</h1>
                     <Carousel gallerySize={project.acf.images.length} />
                     <div className="content-container"> 

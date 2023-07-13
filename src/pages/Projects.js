@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import Accordion from '../components/Accordion'
 import Loading from "../components/Loading";
+import { Helmet } from "react-helmet-async";
 
 function Projects() {
 
@@ -31,6 +32,13 @@ function Projects() {
                     <h1>Projects</h1>
                     <div className="projects-container" >
                         {restData.map(project => {
+                            <Helmet>
+                                {/* Hard coded because there is no Projects page in WP */}
+                                <title>Kristina Hunt | Projects</title>
+                                <meta name="description" content="Projects completed during the Front-end Web Developer program at BCIT in Vancouver, BC."/>
+                                <meta name="keywords" content="Web developer, front-end web developer, web designer, Vancouver web developer, UI/UX designer"/>
+                            </Helmet>
+
                             return <Accordion key={project.id}
                                             coverImage = {project._embedded['wp:featuredmedia'][0]}
                                             featuredMedia = {project.featured_media}

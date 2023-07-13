@@ -1,6 +1,7 @@
 import {useState, useEffect} from 'react';
 import { Link } from 'react-router-dom';
 import Loading from "../components/Loading"
+import { Helmet } from 'react-helmet-async';
 
 function Landing() {
 
@@ -28,6 +29,12 @@ function Landing() {
         {isLoaded ? 
             <>
         <section id='landing'>
+            <Helmet>
+                <title>{restData.yoast_head_json.title}</title>
+                <meta name="description" content={restData.yoast_head_json.description}/>
+                <meta name="keywords" content="Web developer, front-end web developer, web designer, Vancouver web developer, UI/UX designer"/>
+            </Helmet>
+
             <h1>{restData.acf?.name}</h1>
             <p className='content'>{restData.acf?.intro}</p>
             <span className="button-arrow">
