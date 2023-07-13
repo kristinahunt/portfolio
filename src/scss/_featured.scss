@@ -1,8 +1,7 @@
 @use "./variables" as *;
 
-#featured {
-
-
+#featured,
+#about {
     h2 {
         color: $primary;
         font-family: $font-primary;
@@ -10,7 +9,6 @@
         font-size: 2.5rem;
     }
 
-    
     .project {
 
         margin: 1rem 0;

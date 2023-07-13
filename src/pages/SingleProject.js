@@ -27,6 +27,8 @@ function SingleProject() {
         fetchData()
     }, [restPath])
 
+    console.log(restPath)
+
     return(
         <section id="single-project">
             {restData.map(project =>
