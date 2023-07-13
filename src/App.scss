@@ -12,6 +12,8 @@
 @use './scss/layouts/landing';
 @use './scss/layouts/projects';
 @use './scss/layouts/single-project';
+@use './scss/layouts/loading';
+@use './scss/layouts/error404';
 
 body {
     background-color: $light;

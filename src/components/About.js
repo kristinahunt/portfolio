@@ -20,8 +20,6 @@ function About({restBase}) {
 
     console.log(restPath)
 
-    console.log(restData.acf?.intro)
-
     return (
         <section id='about'>
             <h2>{restData.acf?.title}</h2>
@@ -38,11 +36,12 @@ function About({restBase}) {
                 </div>
                 <div className="column-right">
                     <h3>Hey there!</h3>
-                    <p>{restData.acf?.about}</p>
+                    {restData.acf?.about_repeater.map(about =>
+                         <p key={about.content}>{about.content}</p>
+                        )}
                     <Socials />
                 </div>
             </div>
-            {/* <img src={restData.acf?.picture} alt="" /> */}
         </section>
     );
 }
