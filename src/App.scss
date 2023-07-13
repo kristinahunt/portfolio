@@ -1,16 +1,23 @@
 @use './scss/variables' as *;
 @use './scss/mixins' as *;
-@use './scss/buttons';
-@use './scss/header';
-@use './scss/landing';
-@use './scss/featured';
-@use './scss/projects';
-@use './scss/projects-grid';
-@use './scss/single-project';
-@use './scss/footer';
+
+@use './scss/components/buttons';
+@use './scss/components/footer';
+@use './scss/components/header';
+@use './scss/components/projects-grid';
+
+@use './scss/layouts/about';
+@use './scss/layouts/featured';
+@use './scss/layouts/landing';
+@use './scss/layouts/projects';
+@use './scss/layouts/single-project';
 
 body {
     background-color: $light;
     font-size: 1.2rem;
     line-height: 1.5;
+}
+
+html {
+    scroll-behavior: smooth;
 }

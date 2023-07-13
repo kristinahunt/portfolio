@@ -1,6 +1,5 @@
-@use "./variables" as *;
-@use "./mixins" as *;
-
+@use "../mixins" as *;
+@use "../variables" as *;
 
 //BIG button
 @keyframes arrow-off {

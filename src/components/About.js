@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import Socials from './Socials';
 
 function About({restBase}) {
 
@@ -34,6 +35,7 @@ function About({restBase}) {
             </div>
             <p>{restData.acf?.about}</p>
             {/* <img src={restData.acf?.picture} alt="" /> */}
+            <Socials />
         </section>
     );
 }

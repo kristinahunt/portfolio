@@ -30,7 +30,7 @@ function SingleProject() {
     console.log(restPath)
 
     return(
-        <section id="single-project">
+        <article id="single-project">
             {restData.map(project =>
                 <div key={project.id} className='single-container'>
                     <h1>{project.title.rendered}</h1>
@@ -107,7 +107,7 @@ function SingleProject() {
                     </div>
                 </div>
                     )}
-        </section>
+        </article>
     )
 }
 
