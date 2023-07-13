@@ -25,17 +25,24 @@ function About({restBase}) {
     return (
         <section id='about'>
             <h2>{restData.acf?.title}</h2>
-            <div className="about-design">
-                <h3>Design Stack:</h3>
-                <p>{restData.acf?.design_skills}</p>
+            <div className="content-container">
+                <div className="column-left">
+                    <div className="about-design">
+                        <h3>Design Stack:</h3>
+                        <p>{restData.acf?.design_skills}</p>
+                    </div>
+                    <div className="about-development">
+                        <h3>Development Stack:</h3>
+                        <p>{restData.acf?.development_skills}</p>
+                    </div>
+                </div>
+                <div className="column-right">
+                    <h3>Hey there!</h3>
+                    <p>{restData.acf?.about}</p>
+                    <Socials />
+                </div>
             </div>
-            <div className="about-development">
-                <h3>Development Stack:</h3>
-                <p>{restData.acf?.development_skills}</p>
-            </div>
-            <p>{restData.acf?.about}</p>
             {/* <img src={restData.acf?.picture} alt="" /> */}
-            <Socials />
         </section>
     );
 }

@@ -5,9 +5,10 @@
 @use './scss/components/footer';
 @use './scss/components/header';
 @use './scss/components/projects-grid';
+@use './scss/components/carousel';
+@use './scss/components/two-columns';
 
-@use './scss/layouts/about';
-@use './scss/layouts/featured';
+@use './scss/layouts/featured-about';
 @use './scss/layouts/landing';
 @use './scss/layouts/projects';
 @use './scss/layouts/single-project';
