@@ -3,11 +3,18 @@
 
 #featured,
 #about {
+
+padding-bottom: 2rem;
+
     h2 {
         color: $primary;
         font-family: $font-primary;
         font-weight: $bold;
         font-size: 2.5rem;
+    }
+
+    h3{
+        margin-bottom: 0;
     }
 
     .project {
@@ -20,6 +27,19 @@
 
         a {
             color: $dark;
+            margin-bottom: 3rem;
         }
+    }
+
+    .socials {
+        @include socials($primary, 0, 4rem);
+        margin: 3rem 0;
+        padding-left: 0.75rem;
+    }
+}
+
+#about {
+    h2 {
+        margin-bottom: 0.5rem;
     }
 }

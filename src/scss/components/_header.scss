@@ -16,13 +16,7 @@ header {
     }
 
     .socials {
-        a {
-            fill: $light;
-            margin: 0 2rem;
-        }
-        svg {
-            scale: 2
-        }
+        @include socials($light, 2rem, 3rem);
     }
 }
 
