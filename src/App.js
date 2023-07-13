@@ -18,7 +18,7 @@ function App() {
             <Route path='/' element={<Main />} />
             <Route path='/projects' element={<Projects />} />
             <Route path='/projects/:slug' element={<Project />} />
-            <Route path='/#about' element={<About />} />
+            <Route path='#about' preventScrollReset={true} element={<About />} />
           </Routes>
         </main>
         <Footer />

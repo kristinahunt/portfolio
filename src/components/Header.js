@@ -14,7 +14,7 @@ function Header() {
     return (
         <header className={navOpen ? 'show' : undefined}>
             <h1> <Link to='/'> <img src={logo} alt="KH logo" /> </Link> </h1>   
-            <button className='nav-button'
+            <button className='nav-button' aria-label='Open menu'
                     onMouseDown={(e) => {e.preventDefault();} }
                     onClick={toggleNav}>
                 <span className="hamburger">
