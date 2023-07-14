@@ -2,27 +2,26 @@
 @use "../variables" as *;
 
 footer {
-    background-color: $primary;
-    color: $light;
-    text-align: center;
-    font-family: $font-primary;
-    font-weight: $bold;
-    font-size: 1.5rem;
-    padding: 1.5rem 0;
+  background-color: $primary;
+  color: $light;
+  text-align: center;
+  font-family: $font-primary;
+  font-weight: $bold;
+  font-size: 1.5rem;
+  padding: 1.5rem 0;
 
-    p {
-        margin: 0 0 1rem 0;
-    }
+  p {
+    margin: 0 0 1rem 0;
+  }
 
-    .socials {
+  .socials {
+    a {
+      fill: $light;
+      margin: 0 1rem;
 
-      a {
-        fill: $light;
-        margin: 0 1rem;
-
-        svg {
-            scale: 1.5;
-        }
+      svg {
+        scale: 1.5;
       }
-    }  
+    }
+  }
 }

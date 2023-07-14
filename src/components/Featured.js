@@ -20,18 +20,16 @@ function Featured() {
     }, [restPath])
 
     return (
-        <section id='featured'>
+        <section id='featured' tabIndex='-1'>
             <h2>Featured Projects</h2>
             <div className="projects-container">
                 {restData.map(project =>
                 <article key={project.id} className="project">
-                    
                     {project.featured_media !== 0 && project._embedded['wp:featuredmedia'][0] && 
                     <div className="featured-image" dangerouslySetInnerHTML={featuredImage(project._embedded['wp:featuredmedia'][0])}></div>}
-
                     <Link to={`/projects/${project.slug}`}><h3>{project.title.rendered}</h3></Link>
                 </article>
-                    )}
+                )}
             </div>
             <div className="button-arrow">
                 <Link to='/projects'>

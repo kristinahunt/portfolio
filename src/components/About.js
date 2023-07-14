@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import Socials from './Socials';
 
-function About() {
+function About({restBase}) {
 
     const restPath = 'https://kristinahunt.ca/portfolio-backend/wp-json/wp/v2/pages/34?_acf_format=standard';
 
@@ -21,7 +21,7 @@ function About() {
     console.log(restPath)
 
     return (
-        <section id="about">
+        <section id='about' tabIndex='2'>
             <h2>{restData.acf?.title}</h2>
             <div className="content-container">
                 <div className="column-left">
