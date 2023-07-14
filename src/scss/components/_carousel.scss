@@ -2,47 +2,47 @@
 @use "../variables" as *;
 
 .image-carousel {
-    position: relative;
-    height: 10em;
+  position: relative;
+  height: 10em;
+  object-fit: cover;
+  overflow: hidden;
+  overflow-y: scroll;
+  z-index: 0;
+
+  img {
+    width: 100%;
+    height: auto;
     object-fit: cover;
-    overflow: hidden;
-    overflow-y: scroll;
-    z-index: 0;
+  }
 
-    img {
-        width: 100%;
-        height: auto;
-        object-fit: cover;
+  button {
+    position: absolute;
+    top: 50%;
+    background: none;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    filter: drop-shadow(0 0 1px $dark);
+
+    svg {
+      fill: $light;
+      scale: 1.2;
     }
+  }
 
-    button {
-        position: absolute;
-        top: 50%;
-        background: none;
-        outline: none;
-        border: none;
-        cursor: pointer;
-        filter: drop-shadow(0 0 1px $dark);
+  .button-prev {
+    left: 0;
+  }
 
-        svg {
-            fill: $light;
-            scale: 1.2;
-        }
-    }
+  .button-next {
+    right: 0;
+  }
 
-    .button-prev {
-        left: 0;
-    }
+  @media (min-width: 45em) {
+    height: 15em;
+  }
 
-    .button-next{
-        right: 0;
-    }
-
-    @media(min-width: 45em){
-        height: 15em;
-    }
-
-    @media(min-width: 65em){
-        height: 25em;
-    }
+  @media (min-width: 65em) {
+    height: 25em;
+  }
 }

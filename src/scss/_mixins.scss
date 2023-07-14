@@ -2,35 +2,34 @@
 
 //Button style
 @mixin button-arrow($padding, $font-size, $scale) {
-    //padding: 0.75rem;
-    padding: $padding;
-    width: max-content;
-    height: max-content;
-    background-color: $primary;
-    
-    a {
-        color: $light;
-        font-family: $font-primary;
-        font-weight: $bold;
-        font-size: $font-size;
-        text-decoration: none;
-        display: inline-block;
-        display: flex;
-        align-items: center;
-    }
+  padding: $padding;
+  width: max-content;
+  height: max-content;
+  background-color: $primary;
 
-    svg {
-        fill: $light;
-        scale: $scale;
-    }
+  a {
+    color: $light;
+    font-family: $font-primary;
+    font-weight: $bold;
+    font-size: $font-size;
+    text-decoration: none;
+    display: inline-block;
+    display: flex;
+    align-items: center;
+  }
+
+  svg {
+    fill: $light;
+    scale: $scale;
+  }
 }
 
 @mixin socials($fill, $margin-top, $margin-right) {
-    a {
-        fill: $fill;
-        margin: $margin-top $margin-right 0 $margin-top;
-    }
-    svg {
-        scale: 2;
-    }
+  a {
+    fill: $fill;
+    margin: $margin-top $margin-right 0 $margin-top;
+  }
+  svg {
+    scale: 2;
+  }
 }

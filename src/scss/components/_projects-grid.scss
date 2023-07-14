@@ -4,80 +4,78 @@
 #featured,
 #projects,
 #about {
-    margin: 0 1rem;
+  margin: 0 1rem;
+
+  .projects-container {
+    display: grid;
+    grid-template-columns: 1fr;
+
+    .accordion-content {
+      height: 0px;
+      overflow: hidden;
+      padding: 0rem;
+      transition: height 0.5s ease;
+    }
+
+    .open {
+      height: 100%;
+      overflow: visible;
+      overflow-y: hidden;
+    }
+
+    .featured-image {
+      margin: 0;
+
+      img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+      }
+    }
+  }
+
+  @media (min-width: 52em) {
+    .projects-container {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+
+      .featured-image {
+        height: 10em;
+        object-fit: cover;
+        overflow: hidden;
+      }
+    }
+  }
+
+  @media (min-width: 65em) {
+    max-width: 60em;
+    margin: 0 auto;
+    padding: 0 1rem;
 
     .projects-container {
-        display: grid;
-        grid-template-columns: 1fr;
-
-        .accordion-content{
-            height: 0px;
-            overflow: hidden;
-            padding: 0rem;
-            transition: height .5s ease;
-        }
-
-        .open {
-            height: 100%;
-            overflow: visible;
-            overflow-y: hidden;
-        }
-    
-        .featured-image {
-            margin: 0;
-            
-            img {
-                width: 100%;
-                height: auto;
-                object-fit: cover;
-            }
-        }
+      .featured-image {
+        height: 12em;
+        width: auto;
+      }
     }
+  }
 
-    @media (min-width: 52em){
-
-        .projects-container{
-            grid-template-columns: repeat(2, 1fr);
-            gap: 1.5rem;  
-
-            .featured-image{
-                height: 10em;
-                object-fit: cover;
-                overflow: hidden;
-            }
-        }
+  @media (min-width: 70em) {
+    .projects-container {
+      .featured-image {
+        height: 14em;
+      }
     }
-
-    @media(min-width: 65em) {
-        max-width: 60em;
-        margin: 0 auto;
-        padding: 0 1rem;
-
-        .projects-container {
-
-            .featured-image {
-                height: 12em;
-            }
-        }
-    }
-
-    @media(min-width: 70em) {
-        .projects-container {
-
-            .featured-image {
-                height: 14em;
-            }
-        }
-    }
+  }
 }
 
 @keyframes animateFromBottom {
-    from {
-      transform: translate3d(0, 10px, 0);
-      opacity: 0
-    }
-    to {
-      transform: translate3d(0, 0, 0);
-      opacity: 1
-    }
+  from {
+    transform: translate3d(0, 10px, 0);
+    opacity: 0;
   }
+  to {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+}

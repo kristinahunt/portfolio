@@ -8,6 +8,7 @@ function Projects() {
     const restPath = 'https://kristinahunt.ca/portfolio-backend/wp-json/wp/v2/posts?categories=3&_embed';
 
     const [restData, setData] = useState([])
+    
     const [isLoaded, setisLoaded] = useState(false)
 
     useEffect(() => {
@@ -38,7 +39,6 @@ function Projects() {
                                 <meta name="description" content="Projects completed during the Front-end Web Developer program at BCIT in Vancouver, BC."/>
                                 <meta name="keywords" content="Web developer, front-end web developer, web designer, Vancouver web developer, UI/UX designer"/>
                             </Helmet>
-
                             return <Accordion key={project.id}
                                             coverImage = {project._embedded['wp:featuredmedia'][0]}
                                             featuredMedia = {project.featured_media}
