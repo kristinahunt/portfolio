@@ -24,7 +24,7 @@ function About({restBase}) {
         <section id='about' tabIndex='2'>
             <h2>{restData.acf?.title}</h2>
             <div className="content-container">
-                <div className="column-left">
+                <section className="column-left">
                     <div className="about-design">
                         <h3>Design Stack:</h3>
                         <p>{restData.acf?.design_skills}</p>
@@ -33,14 +33,14 @@ function About({restBase}) {
                         <h3>Development Stack:</h3>
                         <p>{restData.acf?.development_skills}</p>
                     </div>
-                </div>
-                <div className="column-right">
+                </section>
+                <section className="column-right">
                     <h3>Hey there!</h3>
                     {restData.acf?.about_repeater.map(about =>
                          <p key={about.content}>{about.content}</p>
                         )}
                     <Socials />
-                </div>
+                </section>
             </div>
         </section>
     );

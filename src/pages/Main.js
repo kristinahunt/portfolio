@@ -1,6 +1,7 @@
 import Landing from '../components/Landing';
 import Featured from '../components/Featured';
 import About from '../components/About';
+// import Colors from '../components/Colors';
 
 function Main() {
 
@@ -9,6 +10,7 @@ function Main() {
             <Landing />
             <Featured />
             <About />
+            {/* <Colors /> */}
         </div>
     );
 }

@@ -8,7 +8,7 @@ function Accordion ({coverImage, featuredMedia, title, slug, summary, designTool
 
     return (
         <div onClick={() => setIsActive(!isActive)} className='project'>
-            {featuredMedia !== 0 && coverImage && <div className="featured-image" dangerouslySetInnerHTML={featuredImage(coverImage)}></div>}
+            {featuredMedia !== 0 && coverImage && <figure className="featured-image" dangerouslySetInnerHTML={featuredImage(coverImage)}></figure>}
             <div className="title-btn">
                 <h2>{title}</h2>
                 <button>
